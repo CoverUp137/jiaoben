@@ -1,5 +1,5 @@
 #!/system/bin/sh
-#cron: 0 1 * * * 
+#cron: 0 13 * * * 
 #new Env('删除青龙备份');
 
 rm -rf /ql/backups/*.tar.gz
