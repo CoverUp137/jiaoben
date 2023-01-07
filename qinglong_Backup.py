@@ -44,7 +44,7 @@ def env(key):
 
 
 QLBK_EXCLUDE_NAMES = ['log', '.git', '.github',
-                      'node_modules', 'backups', '.pnpm-store', 'backups', 'build', 'cli', 'dist', 'docker', 'public', 'sample', 'shell', 'src', 'repo']   # 填写排除备份的名单
+                      'node_modules', '.pnpm-store', 'backups', 'build', 'cli', 'dist', 'docker', 'public', 'sample', 'shell', 'src', 'repo']   # 填写排除备份的名单
 if env("QLBK_EXCLUDE_NAMES"):
     QLBK_EXCLUDE_NAMES = env("QLBK_EXCLUDE_NAMES")
     logger.info(f'检测到设置变量 {QLBK_EXCLUDE_NAMES}')
