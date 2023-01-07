@@ -21,7 +21,7 @@ new Env('青龙自动备份');
 # aligo报错处理:  青龙---依赖管理---linux--安装 zlib zlib-dev libjpeg-turbo libjpeg-turbo-dev gcc python3-dev libffi-dev musl-dev linux-headers
 
 # 手机登录阿里云盘，创建一个名为 backups 的文件夹
-# 执行脚本后复制日志里面的链接扫码登录阿里云盘，等待备份完成！
+# 执行脚本后复制日志里面的链接在浏览器打开，并扫码登录阿里云盘，等待备份完成！
 
 
 import logging
