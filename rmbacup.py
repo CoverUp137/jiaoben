@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# coding: utf-8
+'''
+功能：删除青龙残留的云盘备份
+Date: 2023/02/19 
+cron: 30 10 */2 * *
+new Env('删除青龙残留的云盘备份');
+'''
 import os
 import shutil
 from datetime import datetime
