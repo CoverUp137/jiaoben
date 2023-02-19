@@ -3,7 +3,7 @@ import shutil
 from datetime import datetime
 from notify import send
 
-folder_path = '/ql/backups*/'
+folder_path = '/ql/backups/'
 
 # 获取文件夹下所有以.tar.gz为后缀名的文件
 files = [f for f in os.listdir(folder_path) if f.endswith('.tar.gz')]
