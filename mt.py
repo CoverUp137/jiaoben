@@ -6,6 +6,7 @@ new Env('MT论坛每日签到');
 '''
 #青龙环境变量: MTCOOKIE
 #填入完整cookies执行。
+#多账号用@隔开
 
 import os
 import re
