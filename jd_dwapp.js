@@ -1,3 +1,5 @@
+require("global-agent/bootstrap");
+global.GLOBAL_AGENT.HTTP_PROXY="http://192.168.2.25:8384";
 /*
 积分换话费
 入口：首页-生活·缴费-积分换话费 
