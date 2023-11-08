@@ -23,7 +23,7 @@ update_option=${update_option:-2}
 
 if [ "$update_option" -eq 1 ]; then
   # 更新源
-  echo -e "${GREEN}✅已更新源${NC}"
+  echo -e "${GREEN}✅开始更新源${NC}"
   pkg update
 else
   echo -e "${YELLOW}❗已跳过更新源❗${NC}"
