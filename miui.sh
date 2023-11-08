@@ -55,7 +55,7 @@ read -p "输入选项 (1 或 2)然后回车 (默认为 2): " download_option
 download_option=${download_option:-2}
 
 if [ "$download_option" -eq 1 ]; then
-  # 下载脚本
+
   wget https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py
   echo  "${GREEN}✅已下载脚本${NC}"
 else
@@ -65,7 +65,7 @@ fi
 echo  "\n"
 echo  "\n"
 
-# 安装python依赖
+
 echo  "${YELLOW}😂是否要安装Python依赖？😂${NC}"
 echo  "1. 安装Python依赖"
 echo  "2. 跳过安装Python依赖"
@@ -73,7 +73,7 @@ read -p "输入选项 (1 或 2)然后回车 (默认为 2): " install_dep_option
 install_dep_option=${install_dep_option:-2}
 
 if [ "$install_dep_option" -eq 1 ]; then
-  # 安装python依赖
+
   pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple
   echo  "${GREEN}✅已安装Python依赖${NC}"
 else
