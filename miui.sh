@@ -6,6 +6,11 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # 恢复默认颜色
 
+
+echo -e "${GREEN}等待10秒后开始执行脚本${NC}"
+echo -e "${GREEN}接下来手机会请求获取读取权限,请点同意${NC}"
+sleep 10
+
 # 获取读写权限,给它权限
 termux-setup-storage
 echo -e "${GREEN}✅获取读写权限${NC}"
