@@ -20,7 +20,7 @@ read -p "输入选项 (1 或 2)然后回车 (默认为 2): " update_option
 update_option=${update_option:-2}
 
 if [ "$update_option" -eq 1 ]; then
-  # 更新源
+  
   echo  "${GREEN}✅开始更新源${NC}"
   pkg update
 else
@@ -30,7 +30,7 @@ fi
 echo  "\n"
 echo  "\n"
 
-# 安装python
+
 echo  "${YELLOW}😂是否要安装Python？😂${NC}"
 echo  "1. 安装Python和wget"
 echo  "2. 跳过安装"
