@@ -32,6 +32,12 @@ echo -e "1. 单账号"
 echo -e "2. 多账号"
 read -p "输入选项 (1 或 2): " account_type
 
+# 检查用户是否提供了有效的选项
+if [[ "$account_type" != "1" && "$account_type" != "2" ]]; then
+  echo -e "${RED}无效的选项${NC}"
+  exit 1
+fi
+
 if [ "$account_type" -eq 1 ]; then
   read -p "请输入手机号码: " mi_account
   read -p "请输入密码: " mi_password
@@ -49,14 +55,11 @@ elif [ "$account_type" -eq 2 ]; then
   echo "export mi_account='$mi_accounts'" > config.sh
   echo "export mi_password='$mi_passwords'" >> config.sh
   echo -e "${GREEN}已生成配置文件${NC}"
-else
-  echo -e "${RED}无效的选项${NC}"
-  exit 1
 fi
 
 # 执行脚本
 sh config.sh
 echo -e "${YELLOW}开始执行脚本${NC}"
 
-
+# 最后添加的一句
 echo "以后每天只需要执行 sh config.sh 即可"
