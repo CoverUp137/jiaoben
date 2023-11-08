@@ -31,33 +31,36 @@ execute_script() {
   echo -e "${YELLOW}请选择账号类型：${NC}"
   echo -e "1. 单账号"
   echo -e "2. 多账号"
-  read -p "输入选项 (1 或 2): " account_type
+  if read -t 30 -p "输入选项 (1 或 2): " account_type; then
+    # 检查用户是否提供了有效的选项
+    if [[ "$account_type" != "1" && "$account_type" != "2" ]]; then
+      echo -e "${RED}无效的选项${NC}"
+      exit 1
+    fi
 
-  # 检查用户是否提供了有效的选项
-  if [[ "$account_type" != "1" && "$account_type" != "2" ]]; then
-    echo -e "${RED}无效的选项${NC}"
+    if [ "$account_type" -eq 1 ]; then
+      read -p "请输入手机号码: " mi_account
+      read -p "请输入密码: " mi_password
+
+      # 生成配置文件
+      echo "export mi_account='$mi_account'" > config.sh
+      echo "export mi_password='$mi_password'" >> config.sh
+      echo "python3 miui.py" >> config.sh
+      echo -e "${GREEN}已生成配置文件${NC}"
+
+    elif [ "$account_type" -eq 2 ]; then
+      read -p "请输入多个手机号码，用&分隔: " mi_accounts
+      read -p "请输入多个密码，用&分隔: " mi_passwords
+
+      # 生成配置文件
+      echo "export mi_account='$mi_accounts'" > config.sh
+      echo "export mi_password='$mi_passwords'" >> config.sh
+      echo "python3 miui.py" >> config.sh
+      echo -e "${GREEN}已生成配置文件${NC}"
+    fi
+  else
+    echo -e "${RED}未提供选项，操作超时${NC}"
     exit 1
-  fi
-
-  if [ "$account_type" -eq 1 ]; then
-    read -p "请输入手机号码: " mi_account
-    read -p "请输入密码: " mi_password
-
-    # 生成配置文件
-    echo "export mi_account='$mi_account'" > config.sh
-    echo "export mi_password='$mi_password'" >> config.sh
-    echo "python3 miui.py" >> config.sh
-    echo -e "${GREEN}已生成配置文件${NC}"
-  
-  elif [ "$account_type" -eq 2 ]; then
-    read -p "请输入多个手机号码，用&分隔: " mi_accounts
-    read -p "请输入多个密码，用&分隔: " mi_passwords
-
-    # 生成配置文件
-    echo "export mi_account='$mi_accounts'" > config.sh
-    echo "export mi_password='$mi_passwords'" >> config.sh
-    echo "python3 miui.py" >> config.sh
-    echo -e "${GREEN}已生成配置文件${NC}"
   fi
 
   # 执行脚本
@@ -69,5 +72,3 @@ execute_script() {
 }
 
 execute_script
-
-
