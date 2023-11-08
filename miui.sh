@@ -10,21 +10,26 @@ NC='\033[0m' # 恢复默认颜色
 termux-setup-storage
 echo -e "${GREEN}✅获取读写权限${NC}"
 
+echo -e "${GREEN}接下来更新源${NC}"
+echo -e "${GREEN}有y的选择y然后回车,没y的直接回车${NC}"
+echo -e "${GREEN}脚本都放在github上,直链下载不了的话可能需要魔法网络${NC}"
+sleep 15
+
 # 更新源
 pkg update
-echo -e "${GREEN}✅更新源${NC}"
+echo -e "${GREEN}✅已更新源${NC}"
 
 # 安装python和nano
 pkg install python nano wget
-echo -e "${GREEN}✅安装python、nano和wget${NC}"
+echo -e "${GREEN}✅已安装python、nano和wget${NC}"
 
 # 下载脚本
 wget https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py
-echo -e "${GREEN}✅下载脚本${NC}"
+echo -e "${GREEN}✅已下载脚本${NC}"
 
 # 安装python依赖
 pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple
-echo -e "${GREEN}✅安装python依赖${NC}"
+echo -e "${GREEN}✅已安装python依赖${NC}"
 
 # 用户选择单账号或多账号
 echo -e "${YELLOW}😂请选择账号类型😂：${NC}"
