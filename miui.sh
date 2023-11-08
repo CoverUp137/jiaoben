@@ -7,7 +7,7 @@ YELLOW='\033[0;33m'
 NC='\033[0m' # 恢复默认颜色
 
 # 提示用户必须给权限
-echo -e "${YELLOW}🚀在继续之前，请确保给予读写权限,选择Y,给给足授权🚀${NC}"
+echo -e "${YELLOW}🚀获取权限,第一次执行需要给读写权限,注意看手机屏幕跳出来的选项🚀${NC}"
 termux-setup-storage
 echo -e "${GREEN}✅已获取读写权限${NC}"
 
