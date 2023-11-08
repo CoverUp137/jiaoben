@@ -60,4 +60,4 @@ fi
 echo -e "${YELLOW}开始执行脚本${NC}"
 sh config.sh
 # 最后添加的一句
-echo -e "${YELLOW}以后只需要回到termux 并执行 sh config.sh即可${NC}"
+echo -e "${YELLOW}以后每天只需要回到termux 并执行一次 sh config.sh即可${NC}"
