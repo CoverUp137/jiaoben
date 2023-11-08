@@ -1,29 +1,35 @@
 #!/bin/bash
 
+# ANSI颜色代码
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # 恢复默认颜色
+
 # 获取读写权限,给它权限
 termux-setup-storage
-echo "已获取读写权限"
+echo -e "${GREEN}已获取读写权限${NC}"
 
 # 更新源
 pkg update
-echo "已更新源"
+echo -e "${GREEN}已更新源${NC}"
 
 # 安装python和nano
 pkg install python nano wget
-echo "已安装python、nano和wget"
+echo -e "${GREEN}已安装python、nano和wget${NC}"
 
 # 下载脚本
 wget https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py
-echo "已下载脚本"
+echo -e "${GREEN}已下载脚本${NC}"
 
 # 安装python依赖
 pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple
-echo "已安装python依赖"
+echo -e "${GREEN}已安装python依赖${NC}"
 
 # 用户选择单账号或多账号
-echo "请选择账号类型："
-echo "1. 单账号"
-echo "2. 多账号"
+echo -e "${YELLOW}请选择账号类型：${NC}"
+echo -e "1. 单账号"
+echo -e "2. 多账号"
 read -p "输入选项 (1 或 2): " account_type
 
 if [ "$account_type" -eq 1 ]; then
@@ -34,7 +40,7 @@ if [ "$account_type" -eq 1 ]; then
   echo "export mi_account='$mi_account'" > config.sh
   echo "export mi_password='$mi_password'" >> config.sh
   echo "python3 miui.py" >> config.sh
-  echo "已生成配置文件"
+  echo -e "${GREEN}已生成配置文件${NC}"
   
 elif [ "$account_type" -eq 2 ]; then
   read -p "请输入多个手机号码，用&分隔: " mi_accounts
@@ -44,14 +50,14 @@ elif [ "$account_type" -eq 2 ]; then
   echo "export mi_account='$mi_accounts'" > config.sh
   echo "export mi_password='$mi_passwords'" >> config.sh
   echo "python3 miui.py" >> config.sh
-  echo "已生成配置文件"
+  echo -e "${GREEN}已生成配置文件${NC}"
 else
-  echo "无效的选项"
+  echo -e "${RED}无效的选项${NC}"
   exit 1
 fi
 
 # 执行脚本
+echo -e "${YELLOW}开始执行脚本${NC}"
 sh config.sh
-echo "开始执行脚本"
-
-echo "以后只需要回来执行 sh config.sh即可"
+# 最后添加的一句
+echo -e "${YELLOW}以后只需要回到termux 并执行 sh config.sh即可${NC}"
