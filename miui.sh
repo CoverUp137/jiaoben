@@ -16,8 +16,8 @@ echo  "\n"
 echo  "${YELLOW}😂是否要更新源？😂${NC}"
 echo  "1. 更新源"
 echo  "2. 跳过更新源"
-read -p "输入选项 (1 或 2)然后回车 (默认为 2): " update_option
-update_option=${update_option:-2}
+read -p "输入选项 (1 或 2)然后回车 (默认为 1): " update_option
+update_option=${update_option:-1}
 
 if [ "$update_option" -eq 1 ]; then
   
@@ -34,8 +34,8 @@ echo  "\n"
 echo  "${YELLOW}😂是否要安装Python？😂${NC}"
 echo  "1. 安装Python和wget"
 echo  "2. 跳过安装"
-read -p "输入选项 (1 或 2)然后回车 (默认为 2): " install_option
-install_option=${install_option:-2}
+read -p "输入选项 (1 或 2)然后回车 (默认为 1): " install_option
+install_option=${install_option:-1}
 
 if [ "$install_option" -eq 1 ]; then
   pkg install python wget
@@ -51,12 +51,12 @@ echo  "\n"
 echo  "${YELLOW}😂是否要下载MIUI签到脚本？😂${NC}"
 echo  "1. 下载脚本"
 echo  "2. 跳过下载脚本"
-read -p "输入选项 (1 或 2)然后回车 (默认为 2): " download_option
-download_option=${download_option:-2}
+read -p "输入选项 (1 或 2)然后回车 (默认为 1): " download_option
+download_option=${download_option:-1}
 
 if [ "$download_option" -eq 1 ]; then
 
-  wget https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py
+  wget https://mirror.ghproxy.com/https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py
   echo  "${GREEN}✅已下载脚本${NC}"
 else
   echo  "${YELLOW}❗已跳过下载脚本❗${NC}"
@@ -69,8 +69,8 @@ echo  "\n"
 echo  "${YELLOW}😂是否要安装Python依赖？😂${NC}"
 echo  "1. 安装Python依赖"
 echo  "2. 跳过安装Python依赖"
-read -p "输入选项 (1 或 2)然后回车 (默认为 2): " install_dep_option
-install_dep_option=${install_dep_option:-2}
+read -p "输入选项 (1 或 2)然后回车 (默认为 1): " install_dep_option
+install_dep_option=${install_dep_option:-1}
 
 if [ "$install_dep_option" -eq 1 ]; then
 
