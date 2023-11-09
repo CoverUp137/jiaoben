@@ -114,4 +114,4 @@ fi
 echo  "${YELLOW}🏃‍♀️开始执行脚本🏃‍♀️${NC}"
 sh config.sh
 
-echo  "${YELLOW}❤️以后每天只需要回到termux 并执行一次 sh mi.sh即可❤️${NC}"
+echo  "${YELLOW}❤️以后每天只需要回到termux 执行一次命令: sh mi.sh 即可❤️${NC}"
