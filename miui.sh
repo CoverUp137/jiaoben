@@ -12,6 +12,7 @@ termux-setup-storage
 
 echo  "${GREEN}等待15秒${NC}"
 sleep 15 
+
 echo  "\n"
 echo  "\n"
 
