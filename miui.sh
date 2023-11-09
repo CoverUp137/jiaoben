@@ -38,8 +38,8 @@ read -p "输入选项 (1 或 2)然后回车 (默认为 1): " install_option
 install_option=${install_option:-1}
 
 if [ "$install_option" -eq 1 ]; then
+echo  "${GREEN}开始安装Python和wget${NC}"
   pkg install python wget
-  echo  "${GREEN}✅已安装Python和wget${NC}"
 else
   echo  "${YELLOW}❗已跳过安装Python和wget❗${NC}"
 fi
@@ -55,9 +55,8 @@ read -p "输入选项 (1 或 2)然后回车 (默认为 1): " download_option
 download_option=${download_option:-1}
 
 if [ "$download_option" -eq 1 ]; then
-
-  wget https://mirror.ghproxy.com/https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py
-  echo  "${GREEN}✅已下载脚本${NC}"
+echo  "${GREEN}开始下载脚本${NC}"
+  wget https://mirror.ghproxy.com/https://raw.githubusercontent.com/CoverUp137/jiaoben/main/miui.py  
 else
   echo  "${YELLOW}❗已跳过下载脚本❗${NC}"
 fi
@@ -73,9 +72,8 @@ read -p "输入选项 (1 或 2)然后回车 (默认为 1): " install_dep_option
 install_dep_option=${install_dep_option:-1}
 
 if [ "$install_dep_option" -eq 1 ]; then
-
+echo  "${GREEN}开始安装Python依赖${NC}"
   pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple
-  echo  "${GREEN}✅已安装Python依赖${NC}"
 else
   echo  "${YELLOW}❗已跳过安装Python依赖❗${NC}"
 fi
@@ -112,6 +110,6 @@ else
 fi
 
 echo  "${YELLOW}🏃‍♀️开始执行脚本🏃‍♀️${NC}"
-sh config.sh
+sh mi.sh
 
 echo  "${YELLOW}❤️以后每天只需要回到termux 执行一次命令: sh mi.sh 即可❤️${NC}"
