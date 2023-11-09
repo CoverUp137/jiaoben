@@ -11,7 +11,7 @@ echo  "${GREEN}开始获取读写权限${NC}"
 termux-setup-storage
 
 echo  "${GREEN}等待15秒${NC}"
-sleep15 
+sleep 15 
 echo  "\n"
 echo  "\n"
 
