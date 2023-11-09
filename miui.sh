@@ -93,18 +93,18 @@ if [ "$account_type" -eq 1 ]; then
   read -p "📱请输入小米手机号码,输入完回车: " mi_account
   read -p "📱请输入小米密码输入,完成后回车: " mi_password
 
-  echo "export mi_account='$mi_account'" > config.sh
-  echo "export mi_password='$mi_password'" >> config.sh
-  echo "python3 miui.py" >> config.sh
+  echo "export mi_account='$mi_account'" > mi.sh
+  echo "export mi_password='$mi_password'" >> mi.sh
+  echo "python3 miui.py" >> mi.sh
   echo  "${GREEN}已生成配置文件${NC}"
   
 elif [ "$account_type" -eq 2 ]; then
   read -p "📱请输入多个手机号码，用&分隔,完成回车: " mi_accounts
   read -p "📱请输入多个密码，用&分隔,完成回车: " mi_passwords
 
-  echo "export mi_account='$mi_accounts'" > config.sh
-  echo "export mi_password='$mi_passwords'" >> config.sh
-  echo "python3 miui.py" >> config.sh
+  echo "export mi_account='$mi_accounts'" > mi.sh
+  echo "export mi_password='$mi_passwords'" >> mi.sh
+  echo "python3 miui.py" >> mi.sh
   echo  "${GREEN}✅已生成配置文件${NC}"
 else
   echo  "${RED}❌无效的选项${NC}"
@@ -114,4 +114,4 @@ fi
 echo  "${YELLOW}🏃‍♀️开始执行脚本🏃‍♀️${NC}"
 sh config.sh
 
-echo  "${YELLOW}❤️以后每天只需要回到termux 并执行一次 sh config.sh即可❤️${NC}"
+echo  "${YELLOW}❤️以后每天只需要回到termux 并执行一次 sh mi.sh即可❤️${NC}"
