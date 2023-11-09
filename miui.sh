@@ -24,7 +24,7 @@ update_option=${update_option:-1}
 
 if [ "$update_option" -eq 1 ]; then
   
-  echo  "${GREEN}✅开始更新源${NC}"
+  echo  "${GREEN}开始更新源${NC}"
   pkg update
 else
   echo  "${YELLOW}❗已跳过更新源❗${NC}"
@@ -112,7 +112,7 @@ else
   exit 1
 fi
 
-echo  "${YELLOW}🏃‍♀️开始执行脚本🏃‍♀️${NC}"
+echo  "${YELLOW}🚗开始执行脚本🚗${NC}"
 sh mi.sh
 
-echo  "${YELLOW}❤️以后每天只需要回到termux 执行一次命令: sh mi.sh 即可❤️${NC}"
+echo  "${YELLOW}✅以后每天只需要回到termux 执行一次命令: sh mi.sh 即可✅${NC}"
