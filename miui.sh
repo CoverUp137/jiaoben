@@ -7,9 +7,11 @@ NC='\033[0m'
 
 
 echo  "${YELLOW}🚀获取权限,第一次执行需要给读写权限,注意看手机屏幕跳出来的选项🚀${NC}"
+echo  "${GREEN}开始获取读写权限${NC}"
 termux-setup-storage
-echo  "${GREEN}✅已获取读写权限${NC}"
 
+echo  "${GREEN}等待15秒${NC}"
+sleep15 
 echo  "\n"
 echo  "\n"
 
