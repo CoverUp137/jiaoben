@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-#
-# -------------------------------
 # cron "30 8,10,15 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('小米社区任务得成长值')
 # 4.11 更新了请求后获取cookie失败的问题 基本一次性就可以跑完 不用多跑几次
@@ -71,7 +69,7 @@ for i in range(len(mi_account)):
             c_list.append(a)
     cookie = str(c_list[-1]).replace('{','').replace('}','').replace(',',';').replace(': ','=').replace('\'','').replace(' ','')
     miui_vip_ph = "".join(re.findall('miui_vip_ph=(.*?);', cookie, re.S))
-    url = 'https://api.vip.miui.com/mtop/planet/vip/user/checkin?pathname=/mio/checkIn&version=dev.1144'
+    url = 'https://api.vip.miui.com/mtop/planet/vip/user/checkinV2?ref=vipAccountShortcut&pathname=/mio/checkIn&version=dev.231107'
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
         'Cookie': f'{cookie}'
@@ -88,6 +86,7 @@ for i in range(len(mi_account)):
     print('*************'+'\n'+f'开始第{i + 1}个账号签到'+'\n'+'签到结果：')
     print(result['message'])
     print('userId: '+userId + ' 用户名: '+result_user['entity']['userName']+ ' 段位: '+ result_user['entity']['userGrowLevelInfo']['showLevel'])
+
 
 # 点赞任务
     print('开始加入点赞任务>>>>')
